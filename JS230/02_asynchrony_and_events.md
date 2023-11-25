@@ -180,9 +180,11 @@ In ES2018 a `finally()` method for Promises was introduced, which works similarl
 
 ### Promises in parallel
 
-`Promise.all()`: One of the Promise concurrency methods (it will tell all the promises in the argument array to run concurrently). It can be useful for aggregating the results of multiple promises. This method takes an array of `Promise` objects as argument and returns another Promise. That Promise will be fulfilled with an array of the fulfillment values of each of the input Promises in the array argument; it will be rejected if any of the input Promises is rejected. The argument array can take any kind of value: for non-Promise values, it will be treated as it is the value of an already fulfilled Promise.
-`Promise.allSettled()`: this method takes an array of Promises and returns another Promise. This Promise won't be fulfilled until all the Promises in the input array have settled. The value of this Promise is an array of special objects, one per input Promise, that have three properties: `status`, `value`, and `reason`, all self-explanatory.
-`Promise.race()`: This method takes an array of Promises and returns another Promise. This Promise is fulfilled or rejected when the first of the Promises in the input array is fulfilled or rejected (or the first of non-Promise values, as they count as immediately fulfilled).
+- `Promise.all()`: One of the Promise concurrency methods (it will tell all the promises in the argument array to run concurrently). It can be useful for aggregating the results of multiple promises. This method takes an array of `Promise` objects as argument and returns another Promise. That Promise will be fulfilled with an array of the fulfillment values of each of the input Promises in the array argument; it will be rejected if any of the input Promises is rejected. The argument array can take any kind of value: for non-Promise values, it will be treated as it is the value of an already fulfilled Promise.
+
+- `Promise.allSettled()`: this method takes an array of Promises and returns another Promise. This Promise won't be fulfilled until all the Promises in the input array have settled. The value of this Promise is an array of special objects, one per input Promise, that have three properties: `status`, `value`, and `reason`, all self-explanatory.
+
+- `Promise.race()`: This method takes an array of Promises and returns another Promise. This Promise is fulfilled or rejected when the first of the Promises in the input array is fulfilled or rejected (or the first of non-Promise values, as they count as immediately fulfilled).
 
 ### Promises based on synchronous values
 
