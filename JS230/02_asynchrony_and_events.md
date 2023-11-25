@@ -89,7 +89,7 @@ request.addEventListener('error', event => {
 Promises are a core JavaScript feature released on ES6 designed to simplify asynchronous programming in this language. In essence, Promises are an easier alternative to pure callback-based asynchrony, seeking to solve two major problems the callback approach has:
 
 - The first and most obvious problem with pure callbacks is that it is easy ending up with **multi-level callbacks**, one nested in each other, which makes code difficult to read: Promises reinvent this nested callback mess as a more linear _promise chain_, much easier to read and understand.
-- The other major problem is **error handling**. If an asynchronous callback function throws an exception, there is no way for that exception to propagate back to the caller function: this is way pure callback-based code breaks exception handling. Promises, on the hand, standardize error handling and provide a way for exceptions to propagate through the chain of Promises.
+- The other major problem is **error handling**. If an asynchronous callback function throws an exception, there is no way for that exception to propagate back to the caller function: this is why pure callback-based code breaks exception handling. Promises, on the other hand, standardize error handling and provide a way for exceptions to propagate through the chain of Promises.
 
 A Promise is an object that represents the _result_ of an eventual asynchronous operation. That result may or may not be ready at certain time; this is by design: there is no way to synchronously get the value of a promise, the only thing we can expect is to it to invoke some callback function when that value is ready.
 
