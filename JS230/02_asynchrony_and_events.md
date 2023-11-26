@@ -307,8 +307,6 @@ According to MDN:
 
 ### Asynchronous iteration
 
-[Rephrase, complete]
-
 Because single Promises do not work for sequences of asynchronous events, we also cannot use regular `async` functions and the `await` statements for these things.
 
 ES2018 provides a solution. Asynchronous iterators are like normal iterators, but they are Promise-based and are meant to be used with a new form of the `for`/`of` loop: the `for`/`await` loop.
