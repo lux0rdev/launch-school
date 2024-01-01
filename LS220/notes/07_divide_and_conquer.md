@@ -27,7 +27,7 @@ The fundamental part of the QuickSort algorithm is _partitioning_. To partition 
 #### Algorithm
 
 1.	Choose the pivot element (it's best to use the middle element)**.
-2.	In the second step, assign `left` and `right` pointers to the leftmost and rightmost indices of the remaining elements in the array, respectively.
+2.	Assign `left` and `right` pointers to the leftmost and rightmost indices of the remaining elements in the array, respectively.
 3.	Increment the `left` pointer continuously, one cell at a time, until it reaches a value that is greater than or equal to the pivot or until it becomes greater than `right`.
 4.	Decrement the `right` pointer continuously, one cell at a time, until it reaches a value that is less than the pivot, or until it becomes smaller than `left`.
 5.	Once you're done incrementing and decrementing the pointers, evaluate whether the `left` pointer has gone beyond the `right` pointer.
