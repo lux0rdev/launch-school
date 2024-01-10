@@ -2,7 +2,7 @@
 
 Binary search is a powerful algorithmic technique used to efficiently search for a target value in an ordered array. It takes advantage of the array's sorted nature to significantly reduce the search space with each iteration, making it an effective and commonly used algorithm.
 
-Binary search excels with ordered arrays because it capitalizes on the ability to divide the search space in half at each step. This results in a time complexity of O(logN) for searching, which is a significant improvement compared to the linear time complexity of O(N) for other search methods like traversing the array sequentially. This is especially true for arrays with a large number of elements.
+Binary search excels with ordered arrays because it capitalizes on the ability to divide the search space in half at each step. This results in a time complexity of O(log N) for searching, which is a significant improvement compared to the linear time complexity of O(N) for other search methods like traversing the array sequentially. This is especially true for arrays with a large number of elements.
 
 ## A Reliable Binary Search Template
 
@@ -17,7 +17,7 @@ while (left <= right) {
   mid = Math.floor((left + right) / 2)
   if (array[mid] == target) {
     // Optional early return
-  } else if (***comparison***) {
+  } else if (/*comparison*/) {
     left = mid + 1
   } else {
     right = mid - 1
