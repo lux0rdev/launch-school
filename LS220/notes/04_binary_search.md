@@ -14,12 +14,12 @@ A reliable template for binary search implementations:
 let left = 0
 let right = array.length - 1
 while (left <= right) {
-  mid = Math.floor((left + right) / 2)
+  mid = Math.floor((left + right) / 2) // updating mid on each iteration
   if (array[mid] == target) {
     // Optional early return
-  } else if (/*comparison*/) {
+  } else if (/*comparison*/) { // element should lay on the right side
     left = mid + 1
-  } else {
+  } else {                     // element should lay on the left side
     right = mid - 1
   }
 }
@@ -27,6 +27,11 @@ while (left <= right) {
 // Most often, if the target is not found, additional handling
 // or returning a specific value is needed. In most cases it will
 // be the value that `left` variable holds.
+
+// For instance, when looking for the number 6 (the last element)
+// in this array:
+// [1, 2, 3, 4, 5, 6]
+// the element will be found saved on the `left` variable
 ```
 
 ## Applications
