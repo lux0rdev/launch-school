@@ -4,6 +4,8 @@ Binary search is a powerful algorithmic technique used to efficiently search for
 
 Binary search excels with ordered arrays because it capitalizes on the ability to divide the search space in half at each step. This results in a time complexity of O(log N) for searching, which is a significant improvement compared to the linear time complexity of O(N) for other search methods like traversing the array sequentially. This is especially true for arrays with a large number of elements.
 
+Binary search can be applied to solve more complex problems that require _finding multiple occurrences or specific patterns within a sorted array_. By carefully designing the search criteria and updating the search range, we can effectively navigate through the array and locate the desired elements.
+
 ## A Reliable Binary Search Template
 
 When writing code for binary search, one common challenge is dealing with off-by-one errors. These errors arise when determining the iteration conditions and deciding which elements to eliminate at each step of the search.
