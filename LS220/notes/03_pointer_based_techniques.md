@@ -12,7 +12,7 @@ We offer three basic strategies:
 
 The Start-End Pointers approach involves using two pointers, namely the `start` and `end` pointers. These pointers define a segment within the list, and by manipulating them, we can efficiently process the elements within that segment. This technique is particularly useful in solving subarray problems, such as finding the longest increasing subarray or determining if an array is a palindrome.
 
-The start-end pointer strategy is a powerful optimization technique commonly used for solving problems on sorted arrays.
+The start-end pointer strategy is a powerful optimization technique commonly used for solving problems on sorted arrays, or partially sorted arrays.
 
 ### Sample problem
 
@@ -83,7 +83,9 @@ The start-end pointer strategy is effective in this case because the array is so
 
 The Anchor/Runner Pointers approach, also known as slow/fast pointers, employs two pointers with different speeds. The `anchor` pointer advances at a slower pace compared to the `runner` pointer. This technique is commonly used to solve problems such as finding the midpoint of an array or determining if an array has any duplicates. By carefully manipulating these pointers, we can efficiently navigate and process the elements of the array. There is a variant called the writer/reader approach.
 
-In conclusion, the anchor-runner pointer strategy provides an effective and efficient method for manipulating arrays in place. 
+By utilizing two pointers, the anchor and runner, we can traverse the array and perform specific operations based on certain conditions. This strategy allows us to solve problems with improved time and space efficiency, often avoiding the need for additional data structures.
+
+In conclusion, the anchor-runner pointer strategy provides an effective and efficient method for manipulating arrays in place, removing the need for nested loops and improving the efficiency of our solution (better space complexity)
 
 ### Sample problem
 
@@ -181,7 +183,9 @@ function moveZeroes(nums) {
 
 ## Two Pointers: K-Window Slide
 
-The K-Window Slide technique is applied when we need to process elements within a sliding window of size `K`. It involves maintaining a fixed-width window and sliding it through the list, updating the boundaries as we iterate. This technique is useful for solving problems such as finding the maximum or minimum sum of a fixed-size window within a collection, calculating sliding window averages, or solving substring-related problems.
+The K-Window Slide technique is applied when we need to process elements within a sliding window of size `K`. It involves maintaining a fixed-width window and sliding it through the list, updating the boundaries as we iterate. This technique is useful for solving problems such as finding the maximum or minimum sum of a fixed-size window within a collection, calculating sliding window averages, or solving substring-related problems (like _the needle in a haystack_ problem).
+
+With this approach, we can solve tasks like finding maximum or minimum sums, averages, or other operations on consecutive subarrays or equivalent.
 
 ### Sample problem
 
@@ -201,16 +205,17 @@ Write a function that takes an array of integers and an integer k as inputs and 
 
 #### Naive Solution O(N^2)
 
-1.	Initialize max to the lowest possible integer.
-2.	Iterate through the array, generate subarrays of length k and compute their sums.
-3.	If the sum is greater than the max, reassign the max variable to the new sum.
-4.	Return max.
+1. Initialize max to the lowest possible integer.
+2. Iterate through the array, generate subarrays of length k and compute their sums.
+3. If the sum is greater than the max, reassign the max variable to the new sum.
+4. Return max.
 
 ```js
 function maximumSum(nums, k) {
   if (nums.length < k || k < 1) {
     return null;
   }
+
   let max = Math.max(); // returns negative infinity
   for (let i = 0; i < nums.length; i++) {
     let subArr = nums.slice(i, i+k)
@@ -219,6 +224,7 @@ function maximumSum(nums, k) {
       max = sum;
     }
   }
+
   return max;
 }
 ```
@@ -230,6 +236,8 @@ To utilize the K Window Slide strategy, let's first answer the questions from ab
 1. _Where do the `left` and `right` pointers start (what is the size of the window)?_ - In this case, we will start with a window size of 4, so the `left` pointer will start at index 0 and the `right` pointer will start at index 3.
 2. _What does the `left` pointer do besides moving?_ - The `left` pointer is responsible for maintaining the window's size and updating the sum of elements within the window. As the window slides, the `left` pointer removes the element that is no longer part of the window from the current sum, before moving forward.
 3. _What does the `right` pointer do besides moving?_ - The `right` pointer is also responsible for maintaining the window's size and updating the sum. As the window slides, the `right` pointer moves forward, adding the element that is now part of the window to the current sum.
+
+Note that, in the following solution, instead of summing up the same numbers, we add them in the initial window, and we go subtracting the left-most number, while adding the right-most one.
 
 ```js
 function maximumSum(nums, k) {
@@ -251,8 +259,9 @@ function maximumSum(nums, k) {
     left++;
     right++;
     sum += nums[right];
-    max = Math.max(max, sum);
+    max = Math.max(max, sum); // choose higher, max found, or new found sum
   }
+
   return max;
 }
 ```
