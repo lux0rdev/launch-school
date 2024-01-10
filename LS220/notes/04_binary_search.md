@@ -27,11 +27,6 @@ while (left <= right) {
 // Most often, if the target is not found, additional handling
 // or returning a specific value is needed. In most cases it will
 // be the value that `left` variable holds.
-
-// For instance, when looking for the number 6 (the last element)
-// in this array:
-// [1, 2, 3, 4, 5, 6]
-// the element will be found saved on the `left` variable
 ```
 
 ## Applications
