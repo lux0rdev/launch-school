@@ -52,11 +52,11 @@ function findTwoNumbers(nums, target) {
 
 To effectively use the start-end pointer strategy, we need to answer several key questions:
 
-1. _Where does my start pointer begin?_ - The start pointer is initially set to the beginning of the array (index 0).
-2. _Where does my end pointer begin?_ - The end pointer is initially set to the end of the array (index N-1), where N represents the length of the array.
-3. _Under which condition do I move the start pointer?_ - We move the start pointer to the right (increment it) when the sum of the numbers at the start and end pointers is less than the target.
-4. _Under which condition do I move the end pointer?_ - We move the end pointer to the left (decrement it) when the sum of the numbers at the start and end pointers is greater than the target.
-5. _Under which condition do I cease the iteration?_ - We stop the iteration when we find our target number, or when the start and end pointers meet, indicating that there is no valid solution.
+1. _Where does my `start` pointer begin?_ - The `start` pointer is initially set to the beginning of the array (index 0).
+2. _Where does my `end` pointer begin?_ - The `end` pointer is initially set to the end of the array (index N-1), where N represents the length of the array.
+3. _Under which condition do I move the `start` pointer?_ - We move the `start` pointer to the right (increment it) when the sum of the numbers at the `start` and `end` pointers **is less** than the target.
+4. _Under which condition do I move the `end` pointer?_ - We move the end pointer to the left (decrement it) when the sum of the numbers at the `start` and `end` pointers **is greater** than the target.
+5. _Under which condition do I cease the iteration?_ - We stop the iteration when we find our target number, or when the `start` and `end` pointers meet, indicating that there is no valid solution.
 
 ```js
 function findTwoSum(array, target) {
@@ -147,6 +147,8 @@ function moveZeroesToEnd(arr) {
 ```
 
 ##### The reader-writer variant O(N)
+
+The anchor-runner swaps values within the array. When swapping elements is too costly (it is slow in the implementation language, or we are swapping big objects), this variant of the same approach can be beneficial.
 
 1. _Where is my `anchor` pointer?_ - The `anchor` pointer (`writer`) is initially set to the beginning of the array (index 0).
 2. _Where is my `runner` pointer?_ - The `runner` pointer (`reader`) is initially set to the beginning of the array (index 0) as well.
