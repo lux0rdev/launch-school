@@ -56,7 +56,7 @@ By using a dummy node, we can ensure that its next pointer always points to the 
 
 ### Algorithm
 
-1.	Initialize three pointers: dummy, `prev` and `curr`. Set dummy to a new node and its next pointer to `head`. Set `prev` to the dummy, and `curr` to the `head` of the linked list.
+1.	Initialize three pointers: `dummy`, `prev` and `curr`. Set `dummy` to a new node and its next pointer to `head`. Set `prev` to the `dummy`, and `curr` to the `head` of the linked list.
 2.	Iterate through the linked list using a loop until `curr` becomes null:
     - If the value of `curr` matches the target value:
         - Set the next pointer of `prev` to `curr.next` to bypass `curr` and remove it from the list.
